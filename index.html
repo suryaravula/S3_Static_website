@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <button id="loginButton">Login</button>
+
+    <script>
+        const cognitoDomain = 'https://your-cognito-domain.auth.<region>.amazoncognito.com';  // Replace with your Cognito domain
+        const clientId = '<Your-App-Client-ID>';  // Replace with your Cognito app client ID
+        const redirectUri = 'http://<your-s3-endpoint>';  // Replace with your S3 website URL
+
+        document.getElementById('loginButton').addEventListener('click', () => {
+            window.location.href = `${cognitoDomain}/login?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
+        });
+    </script>
+</body>
+</html>
